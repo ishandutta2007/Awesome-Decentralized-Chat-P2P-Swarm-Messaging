@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913" />
+      <stop offset="45%" stop-color="#0d1124" />
+      <stop offset="100%" stop-color="#080c1a" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00FFA3" />
+      <stop offset="50%" stop-color="#00D2FF" />
+      <stop offset="100%" stop-color="#7928CA" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00FFA3" />
+      <stop offset="40%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.08)" />
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.02)" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glow-purple" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="25" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glow-orb" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40" result="blur" />
+    </filter>
+
+    <!-- Dynamic Pulse Animations -->
+    <style>
+      .orb-1 {
+        animation: floatOrb1 8s ease-in-out infinite alternate;
+      }
+      .orb-2 {
+        animation: floatOrb2 10s ease-in-out infinite alternate;
+      }
+      .signal-wave {
+        animation: pulseWave 3s ease-out infinite;
+        transform-origin: center;
+      }
+      .signal-wave-delay {
+        animation: pulseWave 3s ease-out infinite;
+        animation-delay: 1.5s;
+        transform-origin: center;
+      }
+      .p2p-node {
+        animation: nodePulse 2.5s ease-in-out infinite alternate;
+      }
+      .dash-flow {
+        stroke-dasharray: 6 6;
+        animation: dashAnimation 20s linear infinite;
+      }
+      .badge-glow {
+        animation: pillGlow 4s ease-in-out infinite alternate;
+      }
+
+      @keyframes dashAnimation {
+        to {
+          stroke-dashoffset: -360;
+        }
+      }
+      @keyframes floatOrb1 {
+        0% { transform: translate(0px, 0px) scale(1); }
+        100% { transform: translate(40px, -25px) scale(1.15); }
+      }
+      @keyframes floatOrb2 {
+        0% { transform: translate(0px, 0px) scale(1); }
+        100% { transform: translate(-35px, 30px) scale(1.2); }
+      }
+      @keyframes pulseWave {
+        0% { r: 10px; opacity: 0.8; }
+        100% { r: 65px; opacity: 0; }
+      }
+      @keyframes nodePulse {
+        0% { r: 5px; opacity: 0.7; }
+        100% { r: 7.5px; opacity: 1; }
+      }
+      @keyframes pillGlow {
+        0% { opacity: 0.7; }
+        100% { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Deep Slate Background -->
+  <rect width="1200" height="420" fill="url(#bgGradient)" rx="16" />
+
+  <!-- Grid Pattern Overlay in Background -->
+  <g opacity="0.12">
+    <path d="M0,60 H1200 M0,120 H1200 M0,180 H1200 M0,240 H1200 M0,300 H1200 M0,360 H1200" stroke="#00D2FF" stroke-width="0.7" />
+    <path d="M100,0 V420 M200,0 V420 M300,0 V420 M400,0 V420 M500,0 V420 M600,0 V420 M700,0 V420 M800,0 V420 M900,0 V420 M1000,0 V420 M1100,0 V420" stroke="#00D2FF" stroke-width="0.7" />
+  </g>
+
+  <!-- Dynamic Glowing Ambient Orbs (Kept behind foreground text) -->
+  <g>
+    <circle class="orb-1" cx="200" cy="120" r="130" fill="#00ffa3" opacity="0.13" filter="url(#glow-orb)" />
+    <circle class="orb-2" cx="1020" cy="220" r="160" fill="#7928ca" opacity="0.18" filter="url(#glow-orb)" />
+    <circle class="orb-1" cx="620" cy="350" r="140" fill="#00d2ff" opacity="0.12" filter="url(#glow-orb)" />
+  </g>
+
+  <!-- Animated P2P Swarm Topology in Background (Right Half) -->
+  <g opacity="0.45" transform="translate(140, 0)">
+    <!-- Swarm Mesh Lines -->
+    <path d="M720,110 L840,90 L950,150 L880,240 L760,200 Z" fill="none" stroke="#38bdf8" stroke-width="1.2" class="dash-flow" />
+    <path d="M840,90 L880,240 M720,110 L950,150 M760,200 L840,90" fill="none" stroke="#818cf8" stroke-width="0.9" opacity="0.6" />
+    <path d="M950,150 L1040,110 L1010,230 L880,240" fill="none" stroke="#c084fc" stroke-width="1" class="dash-flow" />
+    <path d="M630,160 L720,110 L760,200 L680,260 Z" fill="none" stroke="#2dd4bf" stroke-width="1" class="dash-flow" />
+
+    <!-- Pulse waves around Hub Node -->
+    <circle cx="880" cy="240" class="signal-wave" fill="none" stroke="#00FFA3" stroke-width="1.5" />
+    <circle cx="880" cy="240" class="signal-wave-delay" fill="none" stroke="#00D2FF" stroke-width="1.5" />
+
+    <!-- P2P Nodes -->
+    <circle cx="720" cy="110" class="p2p-node" fill="#00FFA3" />
+    <circle cx="840" cy="90" class="p2p-node" fill="#38bdf8" />
+    <circle cx="950" cy="150" class="p2p-node" fill="#c084fc" />
+    <circle cx="880" cy="240" r="7" fill="#00FFA3" filter="url(#glow-cyan)" />
+    <circle cx="760" cy="200" class="p2p-node" fill="#38bdf8" />
+    <circle cx="1040" cy="110" class="p2p-node" fill="#f43f5e" />
+    <circle cx="1010" cy="230" class="p2p-node" fill="#a855f7" />
+    <circle cx="630" cy="160" class="p2p-node" fill="#2dd4bf" />
+    <circle cx="680" cy="260" class="p2p-node" fill="#6366f1" />
+  </g>
+
+  <!-- Foreground Content: Clean Header, Title, Subtitle, and Tagline -->
+  <g transform="translate(60, 0)">
+    <!-- Top Category Pill / Badge -->
+    <g transform="translate(0, 52)">
+      <rect width="320" height="32" rx="16" fill="rgba(0, 255, 163, 0.12)" stroke="rgba(0, 255, 163, 0.4)" stroke-width="1" class="badge-glow" />
+      <circle cx="18" cy="16" r="4.5" fill="#00FFA3" filter="url(#glow-cyan)" />
+      <text x="32" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#00FFA3" letter-spacing="1.2">DECENTRALIZED COMMUNICATION</text>
+    </g>
+
+    <!-- Main Title (Gradient Foreground, High Contrast, Sharp Readability) -->
+    <text x="0" y="142" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="900" fill="url(#textGrad)" letter-spacing="-0.5">
+      Decentralized Chat &amp; P2P Swarm
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="196" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="600" fill="#f8fafc">
+      Serverless Messaging &amp; Censorship-Resistant Networks
+    </text>
+
+    <!-- Descriptive Tagline -->
+    <text x="0" y="238" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#94a3b8">
+      Curated protocols, SaaS platforms, offline mesh tools &amp; open-source architectures.
+    </text>
+
+    <!-- Feature Pills (Clean glassmorphism pills) -->
+    <g transform="translate(0, 280)">
+      <!-- Pill 1: Zero Servers -->
+      <g transform="translate(0, 0)">
+        <rect width="180" height="38" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+        <circle cx="20" cy="19" r="4" fill="#00FFA3" />
+        <text x="34" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="600" fill="#e2e8f0">Serverless / P2P</text>
+      </g>
+
+      <!-- Pill 2: Onion Routing -->
+      <g transform="translate(194, 0)">
+        <rect width="180" height="38" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+        <circle cx="20" cy="19" r="4" fill="#38bdf8" />
+        <text x="34" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="600" fill="#e2e8f0">Onion Routing</text>
+      </g>
+
+      <!-- Pill 3: Offline Bluetooth/Mesh -->
+      <g transform="translate(388, 0)">
+        <rect width="190" height="38" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+        <circle cx="20" cy="19" r="4" fill="#c084fc" />
+        <text x="34" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="600" fill="#e2e8f0">Offline Mesh / Tor</text>
+      </g>
+
+      <!-- Pill 4: End-to-End Encryption -->
+      <g transform="translate(592, 0)">
+        <rect width="210" height="38" rx="10" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+        <circle cx="20" cy="19" r="4" fill="#f43f5e" />
+        <text x="34" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="600" fill="#e2e8f0">Zero-Metadata &amp; E2EE</text>
+      </g>
+    </g>
+
+    <!-- Bottom Metric / Status line -->
+    <g transform="translate(0, 360)">
+      <line x1="0" y1="0" x2="1080" y2="0" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+      <text x="0" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="500" fill="#64748b">
+        ⚡ Matrix · Nostr · SimpleX · Pear Runtime / Keet · Tox · Briar · Meshtastic · Berty · Jami · Tinode
+      </text>
+    </g>
+  </g>
+</svg>
