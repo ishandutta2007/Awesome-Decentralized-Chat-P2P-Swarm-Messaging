@@ -15,21 +15,23 @@ This repository tracks notable **SaaS platforms** and **open-source projects** f
 Contributions welcome! Open an PR to add/update entries. Keep descriptions factual and link to official sites.
 
 ## Table of Contents
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
 - [SaaS/Hosted Platforms](#saas-products)
 - [Open-Source GitHub Projects](#open-source-github-projects)
 - [How to Contribute](#how-to-contribute)
 - [Disclaimer](#disclaimer)
 
+## Sector Overview & Market Dynamics
+
+The decentralized and Web3 messaging market is estimated between **$85 million and $1.5 billion** (projected to scale toward **$15B–$34B** by the mid-2030s at an estimated ~36%–44% CAGR). The sector is currently **moderately fragmented**—unlike traditional consumer instant messaging dominated by centralized tech monopolies (WhatsApp, Meta, Telegram), decentralized communications span numerous independent cryptographic protocols (Matrix, SimpleX, Holepunch/Pear, Tor/I2P onion-routing, and blockchain-based networks) with low barriers to entry for open-source protocols, though standard-setting projects are progressively consolidating enterprise and privacy market adoption.
+
 ## SaaS/Hosted Platforms
 
-- **[Element (Matrix)](https://element.io/)**  
-  **The flagship client for the open, decentralized Matrix standard.** **Federated architecture** similar to email SMTP—no single vendor dependency . **Self-hostable homeservers** with end-to-end encryption, air-gapped deployment options, and **Secure Border Gateway** for controlled federation . Positioned for organizations (governments, defense) needing digital sovereignty and cross-organizational collaboration without proprietary lock-in [citation:8].
-
-- **[Session](https://getsession.org/)**  
-  **Onion-routed messenger with decentralized message storage.** **Randomized alphanumeric IDs** replace phone numbers; **onion requests** route messages through multiple encrypted layers to protect IP addresses . **Swarm-based storage** distributes messages across Session Nodes for censorship resistance . **No personal information required** for account creation [citation:6][citation:14]. Positioned for users wanting Signal-like UX with stronger anonymity guarantees.
-
-- **[Keet by Holepunch](https://keet.io/)**  
-  **Truly peer-to-peer chat with no servers and no cloud storage.** **Messages, files, and calls travel directly between devices**—not even Keet can access conversations . **HD audio/video calls** and file sharing over direct device-to-device connections . Cross-platform on desktop and mobile [citation:5][citation:13]. Positioned for teams wanting corporate-server-free communication with modern features.
+| Company / Platform | Company Size (Valuation / Funding / Revenue) | Pricing (Starting Tier) | Free Tier Limits | Architecture & Focus |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Keet (Holepunch)](https://keet.io/)** | **~$10M–$100M** backing (backed by Tether & Bitfinex; $10M initial funding + up to $100M ecosystem capital commitment; Tether parent valued at ~$500B) | **$0 / month** (100% free serverless P2P model; optional P2P Lightning/USDT micropayments for dev integrations) | **Free forever with no artificial limits**: Unlimited direct peer-to-peer 1-on-1 and group chat, HD calls, and direct device-to-device file transfer without central server bandwidth caps | Pure serverless peer-to-peer (P2P) desktop/mobile client built on Pear Runtime; zero intermediary servers or cloud storage. |
+| **[Element (Matrix)](https://element.io/)** | **~$50M+** total funding raised ($30M Series B led by Protocol Labs, Automattic, Notion Capital; revenue ~$5M–$10M ARR) | **$5.00 / user / month** (Element Cloud Starter / Business managed hosting; custom quotes for Enterprise starting at 100+ seats) | **Free forever plan (Community & Public Matrix.org)**: Free self-hosting for up to 100 users via Element Server Suite Community FOSS distribution; free public accounts on `matrix.org` homeserver capped at 10 MB per file attachment and 100 MB data usage / 24 hrs (500 MB / 28 days) | Federated homeserver architecture (Matrix protocol); enterprise secure border gateways, air-gapped defense/government deployments. |
+| **[Session](https://getsession.org/)** | **~$1M–$5M** crypto market cap & grant funding (stewarded by non-profit Session Technology Foundation / Oxen; funded via donations, node rewards, and token utility) | **$2.99 / user / month** (Session Pro yearly subscription, or $4.99/mo billed monthly) | **Free forever plan**: Unlimited standard E2E encrypted messaging, voice calls, and group chats up to 100 members; file attachments capped at 10 MB per file, 2-week message TTL on decentralized storage nodes; no account info or phone number needed | Onion-routed, service-node decentralized network with swarm storage and zero metadata collection. |
 
 ## Open-Source GitHub Projects
 
