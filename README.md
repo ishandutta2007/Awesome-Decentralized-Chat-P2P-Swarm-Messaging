@@ -1,6 +1,6 @@
 # Awesome-Decentralized-Chat-P2P-Swarm-Messaging
 
-# Top Decentralized Chat & P2P Swarm Messaging Ecosystem
+## Top Decentralized Chat & P2P Swarm Messaging Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on Serverless Messaging, Onion Routing & Self-Hosted Federated Networks*  
